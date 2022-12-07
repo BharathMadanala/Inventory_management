@@ -1,10 +1,10 @@
-from asyncio.windows_events import NULL
+
 import sqlite3 as sq
 import streamlit as st
 import datetime
 from datetime import date
 import pandas as pd
-df=NULL
+
 def func():
     
 
@@ -30,9 +30,7 @@ def func():
     ctt = pd.DataFrame(ct,columns=['','count'])
     ctt.set_index('',inplace=True)
     st.table(ctt)
-def val():
-    
-    return df.to_csv().encode('utf-8')
+
 def clear():
     conn=sq.connect("data.db")
     pic=conn.execute('''Delete from coco''')
