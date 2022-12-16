@@ -43,11 +43,15 @@ if option=="Staff":
             categories = predictions[:, 5]
 
             results.save(save_dir="Images/output/")
-            
             if st.button('Detect'):
                 st.image("Images/output/image0.jpg")
             else:
                 st.image(x)
+            z=results.pandas().xyxy[0]
+            st.table(z["name"])
+            d={}
+            for i in z["name"]:
+                
     elif mode=="Video":
             st.title('🎥Object Detection Video')
             webrtc_streamer(key="Key")
